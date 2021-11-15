@@ -1,0 +1,14 @@
+apiVersion: v1
+kind : Pod
+metadata:
+  name: chat-server
+  labels:
+    app: chatapp
+    release: "2"
+spec:
+  containers:
+  - name: chat-server
+    image: sakthiratnam/fastapichat:latest
+    imagePullPolicy: Always
+    
+       

@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2021-10-01T11:55:02Z"
+  labels:
+    app: webserver
+  name: nginx-deployment
+  namespace: default
+  resourceVersion: "387836"
+  uid: 2e53dc47-2334-42eb-b8eb-cb541a93f49e
+spec:
+  clusterIP: 10.104.60.1
+  clusterIPs:
+  - 10.104.60.1
+  externalTrafficPolicy: Cluster
+  ports:
+  - nodePort: 31747
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: webserver
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: chat-main
+  name: chat-maindeploy
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: chatapps
+  template:
+    metadata:
+      labels:
+        app: chatapps
+    spec:
+      containers:
+      - name: chatapp
+        image: sakthiratnam/fastapichat
+

@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: webapp
+spec:
+  selector:
+    matchLabels:
+      app: webnginx
+  replicas: 2
+  template: # template for the pods
+    metadata:
+      labels:
+        app: webnginx
+    spec:
+      containers:
+      - name: webapp
+        image: nginx
+

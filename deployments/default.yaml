@@ -1,0 +1,12 @@
+   matchLabels:
+      app: webserver
+  template:
+    metadata:
+      labels:
+        app: webserver
+    spec:
+      containers: # Container Details
+      - name: nginx
+        image: nginx:latest # Image
+        ports:
+        - containerPort: 80
